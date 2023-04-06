@@ -42,14 +42,22 @@ public class Boss
 
     {
 
-        if (mp > 5)
+
+
+        if (mp >= 5)
         {
             this.mp -= damage;
 
             Debug.Log("魔法攻撃をした。残りMPは" + mp);
         }
+        else
+        {
+            Debug.Log("MPが不足しています");
+        }
 
     }
+
+
 
 
 }
@@ -65,6 +73,8 @@ public class Boss
 
 
 public class Test : MonoBehaviour
+
+
 
 {
 
@@ -83,21 +93,18 @@ public class Test : MonoBehaviour
 
         lastboss.Defence(99);
 
-        //魔法用の関数を呼び出す
+            //魔法用の関数を呼び出す
 
-
-
-        for (int b = 0; b < 10; b++)
-        if(b<10)
-            
-            {lastboss.Magic(5); }
-        Debug.Log("MPが不足しています");
+            for (int b = 0; b < 11; b++)
+            {
+                lastboss.Magic(5);
+            }
 
 
 
 
-//要素数5の配列を初期化する
-int[] array = new int[5];
+        //要素数5の配列を初期化する
+        int[] array = new int[5];
 
         //配列の各要素に値を代入する
         array[0] = 1;
